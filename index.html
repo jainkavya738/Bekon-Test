@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Landing Page</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            background:linear-gradient(135deg,#4F46E5,#06B6D4,#14B8A6);
+            background-size:300% 300%;
+            animation:bgMove 12s ease infinite;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:40px;
+        }
+
+        @keyframes bgMove{
+            0%{background-position:0% 50%;}
+            50%{background-position:100% 50%;}
+            100%{background-position:0% 50%;}
+        }
+
+        .container{
+            width:min(1100px,100%);
+            background:rgba(255,255,255,0.15);
+            backdrop-filter:blur(18px);
+            border:1px solid rgba(255,255,255,0.2);
+            border-radius:25px;
+            padding:50px;
+            color:white;
+            box-shadow:0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:60px;
+        }
+
+        nav h2{
+            font-size:30px;
+            letter-spacing:1px;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:25px;
+        }
+
+        nav a{
+            text-decoration:none;
+            color:white;
+            transition:.3s;
+            font-weight:500;
+        }
+
+        nav a:hover{
+            color:#FFE082;
+        }
+
+        .hero{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:50px;
+            align-items:center;
+        }
+
+        .hero h1{
+            font-size:55px;
+            margin-bottom:20px;
+            line-height:1.1;
+        }
+
+        .hero p{
+            font-size:18px;
+            line-height:1.8;
+            opacity:0.9;
+            margin-bottom:30px;
+        }
+
+        .buttons{
+            display:flex;
+            gap:20px;
+        }
+
+        button{
+            padding:15px 28px;
+            border:none;
+            border-radius:50px;
+            cursor:pointer;
+            font-size:16px;
+            transition:.3s;
+            font-weight:600;
+        }
+
+        .primary{
+            background:white;
+            color:#4F46E5;
+        }
+
+        .primary:hover{
+            transform:translateY(-4px);
+            box-shadow:0 10px 20px rgba(255,255,255,.3);
+        }
+
+        .secondary{
+            background:transparent;
+            color:white;
+            border:2px solid white;
+        }
+
+        .secondary:hover{
+            background:white;
+            color:#4F46E5;
+        }
+
+        .mockup{
+            background:rgba(255,255,255,.18);
+            border-radius:20px;
+            padding:30px;
+        }
+
+        .screen{
+            background:white;
+            color:#222;
+            border-radius:15px;
+            padding:25px;
+        }
+
+        .chart{
+            display:flex;
+            align-items:flex-end;
+            gap:12px;
+            height:180px;
+            margin-top:25px;
+        }
+
+        .bar{
+            flex:1;
+            border-radius:10px 10px 0 0;
+            background:linear-gradient(to top,#4F46E5,#06B6D4);
+        }
+
+        .bar:nth-child(1){height:40%;}
+        .bar:nth-child(2){height:65%;}
+        .bar:nth-child(3){height:80%;}
+        .bar:nth-child(4){height:55%;}
+        .bar:nth-child(5){height:95%;}
+        .bar:nth-child(6){height:70%;}
+
+        .features{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:25px;
+            margin-top:70px;
+        }
+
+        .card{
+            background:rgba(255,255,255,.12);
+            padding:25px;
+            border-radius:18px;
+            transition:.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-8px);
+            background:rgba(255,255,255,.2);
+        }
+
+        .icon{
+            width:60px;
+            height:60px;
+            border-radius:50%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:white;
+            color:#4F46E5;
+            font-size:28px;
+            margin-bottom:18px;
+        }
+
+        .card h3{
+            margin-bottom:12px;
+        }
+
+        .card p{
+            line-height:1.6;
+            opacity:.9;
+        }
+
+        footer{
+            text-align:center;
+            margin-top:60px;
+            opacity:.8;
+            font-size:14px;
+        }
+
+        @media(max-width:850px){
+
+            .hero{
+                grid-template-columns:1fr;
+            }
+
+            nav{
+                flex-direction:column;
+                gap:20px;
+            }
+
+            nav ul{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            .hero h1{
+                font-size:42px;
+            }
+
+            .container{
+                padding:30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <nav>
+        <h2>NovaUI</h2>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+
+        <div>
+            <h1>Build Something Amazing.</h1>
+
+            <p>
+                This is a random demo webpage designed for testing purposes.
+                It includes responsive layouts, cards, buttons, gradients,
+                animations, and a modern glassmorphism UI.
+            </p>
+
+            <div class="buttons">
+                <button class="primary">Get Started</button>
+                <button class="secondary">Learn More</button>
+            </div>
+
+        </div>
+
+        <div class="mockup">
+
+            <div class="screen">
+
+                <h2>Analytics Dashboard</h2>
+                <p>Weekly Performance</p>
+
+                <div class="chart">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="features">
+
+        <div class="card">
+            <div class="icon">⚡</div>
+            <h3>Fast Performance</h3>
+            <p>Optimized layout with lightweight CSS and responsive design.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h3>Modern UI</h3>
+            <p>Glassmorphism effects, gradients, hover animations and clean typography.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📱</div>
+            <h3>Responsive</h3>
+            <p>Looks great on desktops, tablets, and mobile devices.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🚀</div>
+            <h3>Ready to Use</h3>
+            <p>Perfect as a sample page for testing HTML rendering or deployments.</p>
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 NovaUI • Demo HTML Page • Built for Testing
+    </footer>
+
+</div>
+
+</body>
+</html>
